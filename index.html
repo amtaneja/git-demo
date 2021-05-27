@@ -1,59 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css">
-    <title>Word Counter</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <title>Word Counter</title>
 </head>
+
 <body>
-    <div class="container" id='hero'>  
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-            <div class="container-fluid ">
-              <a class="navbar-brand text-light fw-bolder" href="#">WbC</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active text-light fw-bolder" aria-current="page" href="#">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-light fw-bolder" href="#">About</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    
+  <div class="container" id='hero'></div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light ">
+      <div class="container-fluid ">
+        <a class="navbar-brand text-light fw-bolder" href="#">WbC</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active text-light fw-bolder" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light fw-bolder" href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <div class="container">
-        <div class="row">
-            <div class="col">
-               <h1 class="display-3 fw-bolder mt-5 heading">Instant Word Counter</h1>
-            </div>
-            <div class="col mt-5">
-                <div class="mb-3">
-                    
-                    <input type="text" class="form-control" id="input1" placeholder="Enter Words limit">
-                    <button type="button" class="btn btn-dark mt-2 " id="submit">Submit</button>
-                  </div>
-                  <div class="mb-3 mt-5">
-                    <label for="exampleFormControlTextarea1" class="form-label lead text-light">Start Typing Your Paragraph</label>
-                    <textarea class="form-control h-auto" id="exampleFormControlTextarea1" rows="10" ></textarea>
-                  </div>
-                  <button type="button" class="btn btn-secondary" id="copy">copy</button>
-            </div>
-        <h3 id='wordLimit'></h3>
+      <div class="row">
+        <div class="col">
+          <h1 class="display-3 fw-bolder mt-5 heading lh-1">Instant Word Counter</h1>
+          <h5 class="lead fw-normal mt-5 text-light">Word counter allow you to count your words
+            precisely for the perfect essay writings and other words bounded documents.
+          </h5>
+        </div>
+        <div class="col mt-5">
+          <div class="mb-3">
+
+            <input type="text" class="form-control" id="input1" placeholder="Enter Words limit">
+            <button type="button" class="btn btn-dark mt-2 " id="submit">Submit</button>
+          </div>
+          <div class="mb-3 mt-5">
+            <label for="exampleFormControlTextarea1" class="form-label lead text-light">Start Typing Your
+              Paragraph</label>
+            <textarea class="form-control h-auto " id="textArea" rows="10"></textarea>
+          </div>
+          <h3 class="lead text-light" id="word-head"></h3>
+          <button type="button" class="btn btn-secondary bg-dark" id="copy" onclick="copy()" data-toggle="tooltip"
+            data-placement="bottom" title="Click to copy the content">Copy</button>
+
+        </div>
+        <h3 id='wordLimit' class="lead text-light"></h3>
+      </div>
     </div>
-</div> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
+<footer>Copyright © 2021 Aman Taneja All rights reserved.</footer>
 </html>
