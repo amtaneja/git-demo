@@ -48,11 +48,11 @@ function textBox() {
         textArea.setAttribute("style", "background-color:white");
         console.log(spaceCount)
         console.log(inputValue)
-        let wordDiff = inputValue - spaceCount;
+        let wordDiff = (inputValue - spaceCount) - 1;
         wordHead.innerText = `You have ${wordDiff} words remaining.`
         if (spaceCount >= inputValue) {
             console.log(spaceCount >= inputValue)
-            let limitExceed = spaceCount - inputValue;
+            let limitExceed = (spaceCount - inputValue)+1;
             wordHead.innerText = `You have exceed word limit by ${limitExceed} words. `
             let copy = document.getElementById('copy')
             
